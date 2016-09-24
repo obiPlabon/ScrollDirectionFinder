@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Obi Plabon">
+    <title>Scroll Direction Checker</title>
+    <style>
+        body {
+            margin: 0;
+            background: #00b7ea;
+            background: -moz-linear-gradient(top, #00b7ea 0%, #009ec3 100%);
+            background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%);
+            background: linear-gradient(to bottom, #00b7ea 0%,#009ec3 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 );
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 400;
+            color: #00596f;
+        }
+
+        .BurjKhalifa {
+            height: 2000px;
+        }
+
+        .scrollDirection {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
+
+        .scrollDirection > span {
+            color: #fff;
+        }
+
+        .Header,
+        .Footer {
+            position: fixed;
+            width: 100%;
+            padding: 10px 0;
+            color: #666;
+            background-color: rgba(255,255,255, .5);
+            text-align: center;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
+        }
+
+        .Header {
+            top: 0;
+            -webkit-transform: translateY(-100%);
+                    transform: translateY(-100%);
+        }
+
+        .Footer {
+            bottom: 0;
+            -webkit-transform: translateY(100%);
+                    transform: translateY(100%);
+        }
+
+        .Header--visible,
+        .Footer--visible {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="Header">
+        <h1>Hay, I'm up here.</h1>
+    </header>
+
+    <div class="BurjKhalifa">
+        <h1 class="scrollDirection js-scrollDirection">Scroll and watch Scroll Direction: <span>None</span></h1>
+    </div>
+
+    <footer class="Footer">
+        <h1>Hay, I'm down here.</h1>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
