@@ -7,19 +7,19 @@
         $footer = $(".Footer");
 
     $window.on("scroll", function() {
-        var currntScrollPosition = $(this).scrollTop();
+        var currentScrollPosition = $(this).scrollTop();
 
-        if (initialScrollPostion < currntScrollPosition) {
-            $scrollDirection.text("Down... (" + currntScrollPosition + ")" );
+        if (initialScrollPostion < currentScrollPosition) {
+            $scrollDirection.text("Down... (" + currentScrollPosition + ")" );
             $header.addClass("Header--visible");
             $footer.removeClass("Footer--visible");
         } else {
-            $scrollDirection.text("Up... (" + currntScrollPosition + ")" );
+            $scrollDirection.text("Up... (" + currentScrollPosition + ")" );
             $header.removeClass("Header--visible");
             $footer.addClass("Footer--visible");
         }
 
-        initialScrollPostion = currntScrollPosition;
+        initialScrollPostion = currentScrollPosition;
     });
     
 }(jQuery));
